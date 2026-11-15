@@ -1,222 +1,42 @@
-# 🌍✈ Travel Guru
+# TravelGuru: frontend app
 
-🔗 Live Demo: https://travel-sync-self.vercel.app/
+This folder contains the React + Vite app. For the project overview, features, architecture and roadmap, see the [main README](../README.md).
 
-Travel Guru is a full-stack web application developed as the final project for the Hack Your Future program. It simulates a modern travel booking platform where users can discover travel packages, explore destinations, save their favorite trips to a wishlist, and complete a booking journey from traveler information to booking confirmation.
-
----
-
-# ✨ Features
-
-### Traveler
-
-- Register and log in using Firebase Authentication
-- View traveler profile
-- Explore travel packages
-- Search and filter packages
-- View detailed package information including itinerary and image gallery
-- Save and remove packages from the wishlist
-- Complete group and individual bookings
-- Review booking summary during checkout
-- Receive a booking confirmation
-
-### Business
-
-- Register and log in as a business user (in progress)
-- Basic business dashboard (in progress)
-
----
-
-# 🛠 Tech Stack
-
-### Frontend
-
-- React
-- Vite
-- React Router
-- CSS
-
-### Backend
-
-- Node.js
-- Express
-
-### Authentication & Database
-
-- Firebase Authentication
-- Firestore
-
-### API
-
-- CrudCrud (Packages and Wishlist)
-
----
-
-# 📁 Project Structure
-
-```text
-app/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── context/
-│   ├── pages/
-│   ├── routes/
-│   ├── services/
-│   └── utils/
-├── public/
-├── index.html
-└── package.json
-```
-
----
-
-# 📄 Pages
-
-- Home
-- Explore
-- Package Details
-- Booking Form
-- Checkout
-- Confirmation
-- Wishlist
-- Login
-- Register
-- Traveler Profile
-
----
-
-# 🚀 How to Run
-
-### Frontend
-
-Navigate to the project folder and install the dependencies:
+## Quick start
 
 ```bash
 npm install
-```
-
-Start the development server:
-
-```bash
+cp .env.example .env.local   # add your Firebase config values
 npm run dev
 ```
 
-### Backend (Optional)
+The required environment variables are listed in the [main README](../README.md#environment-variables).
 
-Navigate to the `api` folder.
+## Scripts
 
-Install dependencies:
+| Command              | What it does                                                |
+| -------------------- | ----------------------------------------------------------- |
+| `npm run dev`        | Starts the Vite dev server                                  |
+| `npm run build`      | Builds for production into `dist/`                          |
+| `npm run lint`       | Runs ESLint and fixes what it can                           |
+| `npm run lint:ci`    | Runs ESLint with zero warnings allowed (used in CI)         |
+| `npm run format`     | Formats the code with Prettier                              |
+| `npm run format:ci`  | Checks formatting without changing files (used in CI)       |
+| `npm run lighthouse` | Runs a Lighthouse accessibility audit on a production build |
 
-```bash
-npm install
+## Folder overview
+
+```
+src/
+├── pages/       Route-level screens
+├── components/  Shared UI (Button, Card, Input) and feature components
+├── context/     AuthContext, BookingContext, WishlistContext
+├── services/    Data access: the only place that knows where data comes from
+├── data/        Local package and review data
+├── routes/      Route config, including the package loader
+└── firebase.js  Firebase setup from environment variables
 ```
 
-Run the backend server:
+## Deployment
 
-```bash
-npm run dev
-```
-
-**Note:** The current application uses **Firebase** for authentication and **CrudCrud** for package and wishlist data, so the frontend can run without starting the local backend.
-
----
-
-# 🔑 Environment Variables
-
-### Frontend (`.env.local`)
-
-```env
-VITE_CRUD_CRUD_API_KEY=your-crudcrud-api-key
-
-VITE_FIREBASE_API_KEY=
-VITE_FIREBASE_AUTH_DOMAIN=
-VITE_FIREBASE_PROJECT_ID=
-VITE_FIREBASE_STORAGE_BUCKET=
-VITE_FIREBASE_MESSAGING_SENDER_ID=
-VITE_FIREBASE_APP_ID=
-```
-
-### Backend (`api/.env`)
-
-```env
-PORT=3001
-CRUD_CRUD_API_KEY=your-crudcrud-api-key
-```
-
----
-
-# 📌 Current Status
-
-✅ Firebase Authentication
-
-✅ Firestore user profiles
-
-✅ Explore page with search and filtering
-
-✅ Package detail page
-
-✅ Wishlist functionality
-
-✅ Booking flow
-
-✅ Checkout summary
-
-✅ Booking confirmation
-
-✅ Responsive layout
-
-✅ CrudCrud integration for packages and wishlist
-
----
-
-# 🎯 Goal of the Project
-
-The goal of Travel Guru is to practice modern full-stack web development by building a realistic travel booking application. Throughout the project, we focused on:
-
-- Building a responsive and consistent user interface
-- Creating reusable React components
-- Implementing client-side routing
-- Managing application state with React Context
-- Integrating Firebase Authentication and Firestore
-- Working with external APIs using CrudCrud
-- Applying collaborative Git and GitHub workflows
-
----
-
-# 📸 Project Preview
-
-| Home                                                            | Explore                                                                |
-| --------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| <img src="./screenshots/HomePage.png" alt="Home" width="420" /> | <img src="./screenshots/ExplorePage1.png" alt="Explore" width="420" /> |
-
-| Package Details                                                                 | Wishlist                                                             |
-| ------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| <img src="./screenshots/PackageDetail.png" alt="Package Details" width="420" /> | <img src="./screenshots/Wishlist2.png" alt="Wishlist" width="420" /> |
-
-| Booking                                                               | Checkout                                                                |
-| --------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| <img src="./screenshots/BookingPage.png" alt="Booking" width="420" /> | <img src="./screenshots/CheckoutPage.png" alt="Checkout" width="420" /> |
-
-| Confirmation                                                                    | Profile                                                           |
-| ------------------------------------------------------------------------------- | ----------------------------------------------------------------- |
-| <img src="./screenshots/ConfirmationPage.png" alt="Confirmation" width="420" /> | <img src="./screenshots/profile.png" alt="Profile" width="420" /> |
-
-# 🚧 Future Improvements
-
-- Business package management
-- Business profile and page
-- Booking history
-- Advanced booking search dashboard
-- Improve (Dynamic)homepage content
-- Customer reviews and rating
-- Online payment integration
-- Improved accessibility
-- SEO optimization
-- Performance improvements
-
----
-
-# 👥 Authors
-
-Built as a final project by a Hack Your Future student team: Abbas, Emebet, and Iglesia, using React, Vite, Firebase, Express, and CrudCrud.
+The app is deployed on Vercel. `vercel.json` sends every route to `index.html` so client-side routing works.
