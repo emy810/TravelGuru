@@ -12,7 +12,7 @@
 
 ## 🔗 Live Demo
 
-**👉 [travel-sync-self.vercel.app](https://travel-sync-self.vercel.app/)**
+**👉 [https://travel-guru-one.vercel.app/]**
 
 Try it in about 2 minutes:
 
@@ -281,5 +281,5 @@ Since the program ended, **Emebet** has developed and maintained it independentl
 
 I'm looking for junior frontend roles. If you'd like to talk about this project or a role, please get in touch.
 
-- 💼 LinkedIn: [linkedin.com/in/your-profile](https://www.linkedin.com/in/emebet-webdev/)
-- 🐙 GitHub: [github.com/emy810](https://github.com/emy810)
+- 💼 LinkedIn: [(https://www.linkedin.com/in/emebet-webdev/)]
+- 🐙 GitHub: [github.com/emy810]
