@@ -282,4 +282,4 @@ Since the program ended, **Emebet** has developed and maintained it independentl
 I'm looking for junior frontend roles. If you'd like to talk about this project or a role, please get in touch.
 
 - 💼 LinkedIn: [(https://www.linkedin.com/in/emebet-webdev/)]
-- 🐙 GitHub: [github.com/emy810]
+- 🐙 GitHub: [(https://github.com/emy810)]
